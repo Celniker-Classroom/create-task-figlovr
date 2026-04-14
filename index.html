@@ -34,17 +34,28 @@ user's selected countries will be displayed at the top of the calculator.-->
 
     <h3>Currency</h3>
     <select id="currencySelect">
-        <option value="dollar" selected>USD $</option>
-        <option value="euro">EUR €</option>
-        <option value="rupee">INR ₹</option>
+        <option name="country" selected>USD $</option>
+        <option name="country">EUR €</option>
+        <option name="country">INR ₹</option>
     </select>
+    <button id="currency">Change Currency</button>
+
 
     <h3>Expenses</h3>
-    <ol>
-      <li name="expense">$</li>
-      <li name="expense">$</li>
-      <li name="expense">$</li>
-    </ol>
+    <button id="entry">Enter an Expense</button>
+
+    <table id="expenseTable">
+      <tr>
+        <th>Item</th>
+        <th>Cost</th>
+        <th>Times Purchased</th>
+      </tr>
+      <tr>
+        <td> x </td>
+        <td> x </td>
+        <td> x </td>
+      </tr>
+    </table>
 
     <h3 id="budget">Your Budget: </h3>
     <h3 id="totalSpend">Total Spending:</h3>
