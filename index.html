@@ -1,13 +1,56 @@
+<!--My Create Task is a travel expenses calculator, where users can input and categorize the costs of what they purchase during their travels.
+Functions will be used in conjunction with buttons that allow the user to convert between currencies and time zones. The time zone for the
+user's selected countries will be displayed at the top of the calculator.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Travel Expenses Calculator</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Your html goes here...</h1>
-    <br>See the <a href="README.md">README</a> for project details
+    <h1>Travel Expenses Calculator</h1>
+    <p id = "date"></p>
+        
+    <h3>Time Zones</h3>
+    <ol>
+      <li name="time">0:00</li>
+      <li name="time">0:00</li>
+      <li name="time">0:00</li>
+    </ol>
+
+     <h3>Desired Time Zones</h3>
+    <input type="checkbox" id="time1"><label for="cb1">United States, PST</label><br>
+    <input type="checkbox" id="time2"><label for="cb2">United States, Central Time</label><br>
+    <input type="checkbox" id="time3"><label for="cb3">United States, PDT</label><br>
+    <input type="checkbox" id="time4"><label for="cb4">Western European Time</label><br>
+    <input type="checkbox" id="time5"><label for="cb5">Central European Time</label><br>
+    <input type="checkbox" id="time6"><label for="cb6">Eastern European Time</label><br>
+    <input type="checkbox" id="time7"><label for="cb7">Beijing Time</label><br>
+    <input type="checkbox" id="time8"><label for="cb8">India</label>
+
+
+    <h3>Currency</h3>
+    <select id="currencySelect">
+        <option value="dollar" selected>USD $</option>
+        <option value="euro">EUR €</option>
+        <option value="rupee">INR ₹</option>
+    </select>
+
+    <h3>Expenses</h3>
+    <ol>
+      <li name="expense">$</li>
+      <li name="expense">$</li>
+      <li name="expense">$</li>
+    </ol>
+
+    <h3 id="budget">Your Budget: </h3>
+    <h3 id="totalSpend">Total Spending:</h3>
+    <h3 id="avgSpend">Average Daily Spending:</h3>
+    <h3 id="remaining">Remaining Money:</h3>
+
+    
 </body>
 </html>
