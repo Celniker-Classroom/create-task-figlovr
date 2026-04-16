@@ -1,36 +1,34 @@
 // add javascript here
 
 
+document.getElementById("budgetEntry").disabled = false;
+let expenses = [];
 
 function currency(change) {
 
 } 
 
-/* document.getElementById("entry").addEventListener("click", function() {
-    let dropdown = document.getElementsByName("country");
-    let name = prompt("Enter item name:");
-    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-    let cost = Number(prompt("Enter cost as a decimal number:"));
-    let number = Number(prompt("Times purchased:"));
 
-    document.getElementById("item").textContent = name;
-    document.getElementById("cost").textContent = "$" + cost;
-    document.getElementById("times").textContent = number;
-    document.getElementById("totalCost").textContent = cost * number;
-})  */
-
-
+//allows user to create table of expenses
 document.getElementById("entry").addEventListener("click", function() {
     let dropdown = document.getElementsByName("country");
     let name = prompt("Enter item name:");
-    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(); //this line used AI/the Internet
     let cost = Number(prompt("Enter cost as a decimal number:"));
-        if cost.i
-    let number = Number(prompt("Times purchased:"));
-    
+        while (isNaN(cost)) {
+            alert("Not a decimal number. Try again");
+            cost = Number(prompt("Enter cost as a decimal number:"));
+        }
+    let number = Number(prompt("Enter the number of times purchased:"));
+        while (isNaN(number)) {
+            alert("Not a decimal number. Try again");
+            cost = Number(prompt("Enter the number of times purchased:"));
+        }
+    let totalCost = number * cost
+    expenses.push(totalCost);
     
     var table = document.getElementById("expenseTable");
-    var row = table.insertRow(0);
+    var row = table.insertRow(-1);
 
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
@@ -40,6 +38,16 @@ document.getElementById("entry").addEventListener("click", function() {
     cell1.innerHTML = name;
     cell2.innerHTML = "$" + cost;
     cell3.innerHTML = number;
-    cell4.innerHTML = number * cost;
-
+    cell4.innerHTML = "$" + totalCost;
 })
+
+document.getElementById("budgetEntry").addEventListener("click", function(){
+    let input = document.getElementById("budget").value;
+    let num = parseInt(input);
+
+    while (isNaN(input)) {
+        document.getElementById("msg").textContent = "Please enter a decimal number!";
+        return;
+    }
+})
+

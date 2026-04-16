@@ -12,24 +12,6 @@ user's selected countries will be displayed at the top of the calculator.-->
 </head>
 <body>
     <h1>Travel Expenses Calculator</h1>
-    <p id = "date"></p>
-        
-    <h3>Time Zones</h3>
-    <ol>
-      <li name="time">0:00</li>
-      <li name="time">0:00</li>
-      <li name="time">0:00</li>
-    </ol>
-
-     <h3>Desired Time Zones</h3>
-    <input type="checkbox" id="time1"><label for="cb1">United States, PST</label><br>
-    <input type="checkbox" id="time2"><label for="cb2">United States, Central Time</label><br>
-    <input type="checkbox" id="time3"><label for="cb3">United States, PDT</label><br>
-    <input type="checkbox" id="time4"><label for="cb4">Western European Time</label><br>
-    <input type="checkbox" id="time5"><label for="cb5">Central European Time</label><br>
-    <input type="checkbox" id="time6"><label for="cb6">Eastern European Time</label><br>
-    <input type="checkbox" id="time7"><label for="cb7">Beijing Time</label><br>
-    <input type="checkbox" id="time8"><label for="cb8">India</label>
 
 
     <h3>Currency</h3>
@@ -51,18 +33,15 @@ user's selected countries will be displayed at the top of the calculator.-->
         <th>Times Purchased</th>
         <th>Total Cost</th>
       </tr>
-      <tr>
-        <td id="item"> x </td>
-        <td id="cost"> x </td>
-        <td id="times"> x </td>
-        <td id="totalCost"> x </td>
-      </tr>
     </table>
 
+    <p id="msg"> </p>
+    <input type="text" id="budget">
+    <button id="budgetEntry" disabled>Enter Budget</button>
     <h3 id="budget">Your Budget: </h3>
     <h3 id="totalSpend">Total Spending:</h3>
     <h3 id="avgSpend">Average Daily Spending:</h3>
-    <h3 id="remaining">Remaining Money:</h3>
+    <h3 id="remaining">Money Remaining:</h3>
 
     
 </body>
