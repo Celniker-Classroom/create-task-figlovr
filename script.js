@@ -1,32 +1,47 @@
-// add javascript here
-
-
-document.getElementById("budgetEntry").disabled = false;
+document.getElementById("budgetEntry").disabled = false; 
 let expenses = [];
 
-function currency(change) {
 
-} 
-
-
-//allows user to create table of expenses
-document.getElementById("entry").addEventListener("click", function() {
-    let dropdown = document.getElementsByName("country");
-    let name = prompt("Enter item name:");
-    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(); //this line used AI/the Internet
-    let cost = Number(prompt("Enter cost as a decimal number:"));
-        while (isNaN(cost)) {
-            alert("Not a decimal number. Try again");
-            cost = Number(prompt("Enter cost as a decimal number:"));
-        }
-    let number = Number(prompt("Enter the number of times purchased:"));
-        while (isNaN(number)) {
-            alert("Not a decimal number. Try again");
-            cost = Number(prompt("Enter the number of times purchased:"));
-        }
-    let totalCost = number * cost
-    expenses.push(totalCost);
     
+function isDecimal(n) {
+    if (n === " " || isNaN(n) || n < 0) {
+        document.getElementById("msg").textContent = "Please enter a decimal number!";
+        return false;
+    }
+    return true;
+}
+
+function budgetEntry(budget) {
+    let num = parseInt(budget);
+    if (isDecimal(num)) {
+    document.getElementById("msg").textContent = " ";
+    document.getElementById("budgetDisplay").textContent = "Your Budget: $" + num;
+    }
+}
+
+
+document.getElementById("budgetEntry").addEventListener("click", function(){
+    let input = document.getElementById("budget").value;
+    budgetEntry(input);
+}) 
+
+
+function itemsEntry(name, cost, number) {
+    document.getElementById("msg").textContent = "";
+    document.getElementById("itemEntry").value = "";
+    document.getElementById("costEntry").value = "";
+    document.getElementById("timesPurchased").value = "";
+    
+    let totalCost = number * cost;
+    expenses.push(totalCost);
+    let sum = 0;
+    
+    for (i = 0; i < expenses.length; i++) {
+        sum += expenses[i];
+    }
+    document.getElementById("totalSpend").textContent = "Total Spending: $" + sum; 
+
+    //used W3Schools to figure out how to add entries to a table using JavaScript
     var table = document.getElementById("expenseTable");
     var row = table.insertRow(-1);
 
@@ -39,15 +54,24 @@ document.getElementById("entry").addEventListener("click", function() {
     cell2.innerHTML = "$" + cost;
     cell3.innerHTML = number;
     cell4.innerHTML = "$" + totalCost;
-})
+}
 
-document.getElementById("budgetEntry").addEventListener("click", function(){
-    let input = document.getElementById("budget").value;
-    let num = parseInt(input);
 
-    while (isNaN(input)) {
-        document.getElementById("msg").textContent = "Please enter a decimal number!";
+document.getElementById("entry").addEventListener("click", function() {
+    let nameInput = document.getElementById("itemEntry").value;
+    let costInput = Number(document.getElementById("costEntry").value);
+    let numberInput = Number(document.getElementById("timesPurchased").value);
+
+    if (!isDecimal(costInput) || !isDecimal(numberInput)) {
         return;
     }
+
+    //Used Google AI Overview for the below line to figure out how to case the item name entry like this
+    nameInput = nameInput.charAt(0).toUpperCase() + nameInput.slice(1).toLowerCase();
+    itemsEntry(nameInput, costInput, numberInput);
+    document.getElementById("msg").textContent = " ";
 })
+
+
+
 

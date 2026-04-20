@@ -1,1 +1,4 @@
-/* Add Global styles here */
+tr, td, th {
+    border: 1px solid;
+    padding: 7px;
+}

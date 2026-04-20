@@ -1,6 +1,6 @@
-<!--My Create Task is a travel expenses calculator, where users can input and categorize the costs of what they purchase during their travels.
-Functions will be used in conjunction with buttons that allow the user to convert between currencies and time zones. The time zone for the
-user's selected countries will be displayed at the top of the calculator.-->
+<!--My Create Task is a travel expenses calculator, where users can input the costs of what they buy during their travels,
+as well as their budget, in order to create a table of their spending. The program receives and displays the budgets, item
+names, item costs, and number of items purchased, and it uses these values to calculate the total spending.-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,18 +13,11 @@ user's selected countries will be displayed at the top of the calculator.-->
 <body>
     <h1>Travel Expenses Calculator</h1>
 
+    <p id="msg"> </p>
+    <input type="text" id="budget">
+    <button id="budgetEntry" disabled>Enter Budget</button>
 
-    <h3>Currency</h3>
-    <select id="currencySelect">
-        <option name="country" selected>USD $</option>
-        <option name="country">EUR €</option>
-        <option name="country">INR ₹</option>
-    </select>
-    <button id="currency">Change Currency</button>
-
-
-    <h3>Expenses</h3>
-    <button id="entry">Enter an Expense</button>
+    <h3>Expenses:</h3>
 
     <table id="expenseTable">
       <tr>
@@ -33,15 +26,18 @@ user's selected countries will be displayed at the top of the calculator.-->
         <th>Times Purchased</th>
         <th>Total Cost</th>
       </tr>
+      <tr>
+        <td><input type="text" id="itemEntry"></td>
+        <td><input type="text" id="costEntry"></td>
+        <td><input type="text" id="timesPurchased"></td>
+        <td id = "totalCost"> </td>
+      </tr>
     </table>
 
-    <p id="msg"> </p>
-    <input type="text" id="budget">
-    <button id="budgetEntry" disabled>Enter Budget</button>
-    <h3 id="budget">Your Budget: </h3>
-    <h3 id="totalSpend">Total Spending:</h3>
-    <h3 id="avgSpend">Average Daily Spending:</h3>
-    <h3 id="remaining">Money Remaining:</h3>
+    <button id="entry">Enter an Expense</button>
+
+    <h3 id="budgetDisplay">Your Budget: </h3>
+    <h3 id="totalSpend">Total Spent:</h3>
 
     
 </body>
