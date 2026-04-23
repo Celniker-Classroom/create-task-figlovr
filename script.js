@@ -14,8 +14,9 @@ function isDecimal(n) {
 function budgetEntry(budget) {
     let num = parseInt(budget);
     if (isDecimal(num)) {
-    document.getElementById("msg").textContent = " ";
-    document.getElementById("budgetDisplay").textContent = "Your Budget: $" + num;
+        document.getElementById("msg").textContent = " ";
+        document.getElementById("budgetDisplay").textContent = "Your Budget: $" + num;
+        document.getElementById("budget").value = "";
     }
 }
 

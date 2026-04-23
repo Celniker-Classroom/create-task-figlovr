@@ -1,16 +1,57 @@
-tr, td, th {
+/* tr, td, th {
     border: 1px solid;
     padding: 7px;
+} */
+
+body {
+    font-family: Andale-mono, monospace;
+    background-color: aliceblue;
 }
 
 h1 {
     text-align: center;
-    color: orange;
+    color: darkorange;
 }
 
-.content {
-    margin: 0 auto;
-    width: 80%;
+.budgetSection {
+    margin: auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+table {
     justify-content: center;
-    background-color: lightpink;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#headingExpenses {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#entry {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+td, th {
+    padding: 18px;
+    font-size: 18px;
+    background-color: pink;
+    border-width: 0px;
+    border-radius: 12px;
+    color: darkolivegreen;
+}
+
+.textbox {
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 2px;
+    border-color: white;
+    color: rgb(24, 36, 3);
 }

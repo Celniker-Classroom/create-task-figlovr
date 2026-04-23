@@ -13,34 +13,34 @@ names, item costs, and number of items purchased, and it uses these values to ca
 <body>
     <h1>Travel Expenses Calculator</h1>
 
-    <div class = "content">
+    <div class = "budgetSection">
     <p id="msg"> </p>
     <input type="text" id="budget">
     <button id="budgetEntry" disabled>Enter Budget</button>
-
-    <h3>Expenses:</h3>
-
-    <table id="expenseTable">
-      <tr>
-        <th>Item</th>
-        <th>Cost</th>
-        <th>Times Purchased</th>
-        <th>Total Cost</th>
-      </tr>
-      <tr>
-        <td><input type="text" id="itemEntry"></td>
-        <td><input type="text" id="costEntry"></td>
-        <td><input type="text" id="timesPurchased"></td>
-        <td id = "totalCost"> </td>
-      </tr>
-    </table>
-
-    <button id="entry">Enter an Expense</button>
-
-    <h3 id="budgetDisplay">Your Budget: </h3>
-    <h3 id="totalSpend">Total Spent:</h3>
     </div>
 
+    <h3 id="headingExpenses">Expenses:</h3>
+
+    <div id="tableSection">
+    <table id="expenseTable">
+      <tr>
+        <th class="box">Item</th>
+        <th class="box">Cost</th>
+        <th class="box">Times Purchased</th>
+        <th class="box">Total Cost</th>
+      </tr>
+      <tr>
+        <td class="box"><input class="textbox" type="text" id="itemEntry"></td>
+        <td class="box"><input class="textbox" type="text" id="costEntry"></td>
+        <td class="box"><input class="textbox" type="text" id="timesPurchased"></td>
+        <td class="box" id = "totalCost"> </td>
+      </tr>
+    </table>
+    <button id="entry">Enter an Expense</button>
+    </div>
+    
+    <h3 id="budgetDisplay">Your Budget: </h3>
+    <h3 id="totalSpend">Total Spent:</h3>
     
 </body>
 </html>
