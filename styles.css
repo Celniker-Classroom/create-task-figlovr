@@ -15,8 +15,13 @@ h1 {
 
 .budgetSection {
     margin: auto;
-    max-width: 700px;
+    max-width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 table {
@@ -35,8 +40,13 @@ table {
     display: block;
     margin: auto;
     text-align: center;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 17px;
+    padding: 12px;
+}
+
+#budgetEntry {
+    font-size: 17px;
+    padding: 12px;
 }
 
 td, th {
@@ -48,7 +58,7 @@ td, th {
     color: darkolivegreen;
 }
 
-.textbox {
+.textbox, #budget {
     padding: 5px;
     font-size: 18px;
     border-radius: 2px;

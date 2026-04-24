@@ -5,7 +5,7 @@ let expenses = [];
     
 function isDecimal(n) {
     if (n === " " || isNaN(n) || n < 0) {
-        document.getElementById("msg").textContent = "Please enter a decimal number!";
+        document.getElementById("msg").textContent = "Please enter a positive decimal number!";
         return false;
     }
     return true;
@@ -63,6 +63,9 @@ document.getElementById("entry").addEventListener("click", function() {
     let costInput = Number(document.getElementById("costEntry").value);
     let numberInput = Number(document.getElementById("timesPurchased").value);
 
+    currencySelection = document.getElementById("currencySelect").value;
+    costInput = currencies(currencySelection, costInput);
+
     if (!isDecimal(costInput) || !isDecimal(numberInput)) {
         return;
     }
@@ -73,6 +76,22 @@ document.getElementById("entry").addEventListener("click", function() {
     document.getElementById("msg").textContent = " ";
 })
 
+function currencies(selection, x) {
+    if (selection === "EUR") {
+        document.getElementById("currencyDisplay").textContent = "Currency: EUR";
+        x = 0.85 * x;
+    } else if (selection === "CAD") {
+        document.getElementById("currencyDisplay").textContent = "Currency: CAD";
+        x = 1.37 * x;
+    } else if (selection === "INR") {
+        document.getElementById("currencyDisplay").textContent = "Currency: INR";
+        x = 94.09 * x;
+    } else (selection === "USD")
+        document.getElementById("currencyDisplay").textContent = "Currency: USD";
+        x = x;
+    return x;
+}
 
+//fix the above function to work without having to enter an expense.......
 
 
