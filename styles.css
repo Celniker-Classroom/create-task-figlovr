@@ -1,16 +1,11 @@
-/* tr, td, th {
-    border: 1px solid;
-    padding: 7px;
-} */
-
 body {
     font-family: Andale-mono, monospace;
-    background-color: aliceblue;
+    background-color: #d0cbe3;
 }
 
 h1 {
     text-align: center;
-    color: darkorange;
+    color: #746d6c;
 }
 
 .budgetSection {
@@ -40,22 +35,34 @@ table {
     display: block;
     margin: auto;
     text-align: center;
-    font-size: 17px;
-    padding: 12px;
+    font-size: 15px;
+    padding: 14px;
+    font-family: andale-mono, monospace;
+    color: #d0cbe3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-width: 0px;
+    border-radius: 12px;
+    background-color: #6e8a63;
 }
 
-#budgetEntry {
-    font-size: 17px;
-    padding: 12px;
+#budgetEntry, #currencyChange, #currencySelect {
+    font-size: 15px;
+    font-family: andale-mono, monospace;
+    padding: 14px;
+    color: #d0cbe3;
+    border-width: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    background-color: #6e8a63;
 }
 
 td, th {
     padding: 18px;
     font-size: 18px;
-    background-color: pink;
+    background-color: #9997bf;
     border-width: 0px;
     border-radius: 12px;
-    color: darkolivegreen;
+    color: #282623;
 }
 
 .textbox, #budget {
@@ -64,4 +71,28 @@ td, th {
     border-radius: 2px;
     border-color: white;
     color: rgb(24, 36, 3);
+}
+
+#dataSection {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 90px;
+    background-color: #9997bf;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 12px;
+}
+
+#currencyButtons {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: fit-content;
 }

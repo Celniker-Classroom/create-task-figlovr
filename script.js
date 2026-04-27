@@ -22,8 +22,15 @@ function budgetEntry(budget) {
 
 
 document.getElementById("budgetEntry").addEventListener("click", function(){
-    let input = document.getElementById("budget").value;
-    budgetEntry(input);
+    let budgetInput = document.getElementById("budget").value;
+    budgetEntry(budgetInput);
+
+        document.getElementById("currencyChange").addEventListener("click", function() {
+        let currencySelection = document.getElementById("currencySelect").value;
+        currencies(currencySelection, budgetInput);
+        document.getElementById("budgetDisplay").textContent = "Your Budget: " + symbol + newCost;
+    })
+    return budgetInput;
 }) 
 
 
@@ -55,16 +62,19 @@ function itemsEntry(name, cost, number) {
     cell2.innerHTML = "$" + cost;
     cell3.innerHTML = number;
     cell4.innerHTML = "$" + totalCost;
-}
 
+    document.getElementById("currencyChange").addEventListener("click", function() {
+        let currencySelection = document.getElementById("currencySelect").value;
+        currencies(currencySelection, totalCost);
+        document.getElementById("totalSpend").textContent = "Total Spending: " + symbol + newCost;
+    })
+    return totalCost;
+}
 
 document.getElementById("entry").addEventListener("click", function() {
     let nameInput = document.getElementById("itemEntry").value;
     let costInput = Number(document.getElementById("costEntry").value);
     let numberInput = Number(document.getElementById("timesPurchased").value);
-
-    currencySelection = document.getElementById("currencySelect").value;
-    costInput = currencies(currencySelection, costInput);
 
     if (!isDecimal(costInput) || !isDecimal(numberInput)) {
         return;
@@ -79,17 +89,23 @@ document.getElementById("entry").addEventListener("click", function() {
 function currencies(selection, x) {
     if (selection === "EUR") {
         document.getElementById("currencyDisplay").textContent = "Currency: EUR";
-        x = 0.85 * x;
+        newCost = 0.85 * x;
+        symbol = "€";
     } else if (selection === "CAD") {
         document.getElementById("currencyDisplay").textContent = "Currency: CAD";
-        x = 1.37 * x;
+        newCost = 1.37 * x;
+        symbol = "C$";
     } else if (selection === "INR") {
         document.getElementById("currencyDisplay").textContent = "Currency: INR";
-        x = 94.09 * x;
-    } else (selection === "USD")
+        newCost = 94.09 * x;
+        symbol = "₹";
+    } else {
         document.getElementById("currencyDisplay").textContent = "Currency: USD";
-        x = x;
-    return x;
+        newCost = x;
+        symbol = "$";
+    }
+    return newCost;
+    return symbol;
 }
 
 //fix the above function to work without having to enter an expense.......
